@@ -1,5 +1,7 @@
-<img width="670" height="384" alt="image" src="https://github.com/user-attachments/assets/4096f1e6-6f4a-404b-89b2-c88eb45c5e32" /># MSFP2
+MSFP2
 Práctica 2 — Modelado y control del sistema cardiovascular mediante el modelo Windkessel
+
+<img width="670" height="384" alt="image" src="https://github.com/user-attachments/assets/4096f1e6-6f4a-404b-89b2-c88eb45c5e32" />
 
 Repositorio académico de la asignatura Modelado de Sistemas Fisiológicos, del programa de Ingeniería Biomédica del Tecnológico Nacional de México / Instituto Tecnológico de Tijuana.
 
@@ -74,20 +76,26 @@ En esta práctica se mantienen constantes Z, L y R, mientras que se modifica C p
 Modelo Windkessel y analogía eléctrica
 En el circuito, la impedancia Z y la inertancia L se encuentran en paralelo entre el nodo de entrada Pa(t) y el nodo Pp(t). Desde el nodo Pp(t), la distensibilidad C y la resistencia periférica R se conectan en paralelo hacia la referencia.
 
-Magnitud cardiovascular	Equivalente eléctrico	Significado
-Presión arterial	Voltaje	Diferencia de potencial de presión
-Flujo sanguíneo	Corriente	Volumen de sangre transportado por unidad de tiempo
+Magnitud cardiovascular	Equivalente eléctrico
+
+Significado
+Presión arterial
+Voltaje	Diferencia de potencial de presión
+Flujo sanguíneo	Corriente	
+Volumen de sangre transportado por unidad de tiempo
+
 Z	Resistencia	Impedancia característica de la región arterial proximal
 L	Inductancia	Inertancia de la sangre en movimiento
 R	Resistencia	Oposición al flujo en la circulación periférica
 C	Capacitancia	Distensibilidad o capacidad arterial de almacenar volumen ante cambios de presión
 
 
-Figura 1. Circuito equivalente Windkessel de cuatro elementos. Agregar aquí la figura del instructivo o una representación propia: imagenes/windkessel.png.
+
 
 [Circuito Windkessel de cuatro elementos](<img width="670" height="384" alt="image" src="https://github.com/user-attachments/assets/bde9c1f1-3fe0-415d-a7c5-fdbb8081619f" />)
 
 Variables y parámetros
+
 Variables principales
 Símbolo	Descripción	Unidad
 Pa(t)	Presión arterial de entrada	mmHg
@@ -181,7 +189,9 @@ G(s)=\frac{Ls+Z}{LCZs^2+L\left(1+\frac{Z}{R}\right)s+Z}.
 \]
 La función de transferencia es de segundo orden, con un cero y dos polos. Los coeficientes cambian según el valor de C utilizado en cada caso.
 Funciones de transferencia de los casos
+
 Sustituyendo Z=0.010, L=0.001 y R=1:
+
 \[
 G_{\mathrm{hipo}}(s)=\frac{0.001s+0.010}{0.000035s^2+0.00101s+0.010}
 \]
@@ -217,8 +227,10 @@ Evidencia pendiente: agregar la gráfica de los tres modelos en lazo abierto, id
 
 Diseño y sintonización PID
 Se construyen dos sistemas de control independientes, uno normotenso–hipotenso y otro normotenso–hipertenso. En ambos, el modelo normotenso proporciona la referencia.
+
 Errores de seguimiento
 Para el caso hipotenso:
+
 \[
 e_{\mathrm{hipo}}(t)=P_{p,\mathrm{normo}}(t)-P_{p,\mathrm{hipo}}(t).
 \]
@@ -236,18 +248,16 @@ K(s)=k_P+\frac{k_I}{s}+k_Ds.
 \]
 
 La señal de control se aplica al modelo del paciente según el esquema de retroalimentación indicado en la práctica. Debe conservarse el modelo normotenso como referencia y no sustituirlo por una señal arbitraria.
-Sintonización
-Utilizar Tune del bloque PID Controller en Simulink para determinar las ganancias de manera independiente:
-Controlador	kP	kI	kD
-Hipotenso	Pendiente	Pendiente	Pendiente
-Hipertenso	Pendiente	Pendiente	Pendiente
 
+Sintonización
+Utilizar Tune del bloque PID Controller en Simulink para determinar las ganancias de manera independiente
 
 El ajuste debe buscar una respuesta estable y una reducción del error respecto a la referencia normotensa. Registrar las ganancias obtenidas y conservar una captura de la configuración utilizada. El material no establece valores numéricos obligatorios para las ganancias.
 Análisis en lazo cerrado
 Repetir las simulaciones con los controladores sintonizados.
 
 Para el caso hipotenso, comparar
+
 \[
 P_{p,\mathrm{normo}}(t),\quad P_{p,\mathrm{hipo}}(t),\quad P_{p,\mathrm{hipo,PID}}(t).
 \]
@@ -255,9 +265,11 @@ Para el caso hipertenso, comparar
 \[
 P_{p,\mathrm{normo}}(t),\quad P_{p,\mathrm{hiper}}(t),\quad P_{p,\mathrm{hiper,PID}}(t).
 \]
+
 Analizar la reducción del error, la estabilidad, el seguimiento de referencia y las diferencias del transitorio. Los resultados de los dos controladores deben presentarse por separado.
 
 Evidencias pendientes: resultados/[hipotenso_matlab.pdf](https://github.com/user-attachments/files/33846951/hipotenso_matlab.pdf) y resultados/[hipertenso_python.pdf](https://github.com/user-attachments/files/33846959/hipertenso_python.pdf).
+
 Implementación en Python
 Reproducir en Visual Studio Code las tres funciones de transferencia con los mismos parámetros y la misma señal de entrada utilizada en MATLAB/Simulink.
 

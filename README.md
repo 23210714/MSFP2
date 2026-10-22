@@ -19,7 +19,9 @@ Departamento: Ingeniería Eléctrica y Electrónica
 Sede: Blvd. Alberto Limón Padilla s/n, Tijuana, C. P. 22454, B. C., México.
 
 Repositorio de la asignatura: https://github.com/DrPaulValle/MSF-IBF1020
+
 Contenido
+
 1. Resumen
 2. Competencia y objetivos
 3. Introducción

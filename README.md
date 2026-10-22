@@ -517,9 +517,7 @@ La siguiente estructura es **sugerida**; los nombres deben adaptarse a los archi
     └── desarrollo_matematico.pdf
 ```
 
-> Las carpetas y archivos anteriores representan la organización prevista, no una afirmación de que todos los entregables ya estén realizados.
 
----
 
 ## Requisitos y reproducción
 

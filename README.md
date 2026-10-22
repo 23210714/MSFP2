@@ -121,13 +121,7 @@ En el circuito, la impedancia $Z$ y la inertancia $L$ se encuentran **en paralel
 | $R$ | Resistencia | Oposición al flujo en la circulación periférica |
 | $C$ | Capacitancia | Distensibilidad o capacidad arterial de almacenar volumen ante cambios de presión |
 
-> **Figura 1.** Circuito equivalente Windkessel de cuatro elementos. Agregar aquí la figura del instructivo o una representación propia: `imagenes/windkessel.png`.
 
-<!-- Cuando exista el archivo, descomentar la siguiente línea:
-![Circuito Windkessel de cuatro elementos](imagenes/windkessel.png)
--->
-
----
 
 ## Variables y parámetros
 
@@ -294,9 +288,7 @@ Las tres condiciones deben recibir **exactamente la misma realización de la se�
 - **Referencia de control:** respuesta normotensa $P_{p,\mathrm{normo}}(t)$.
 - **Condiciones iniciales:** emplear las mismas condiciones iniciales para comparar las representaciones.
 
-El material proporcionado no especifica en las páginas visibles la distribución, amplitud, semilla ni periodo de muestreo de la señal aleatoria. Estos ajustes deben documentarse cuando se configure el generador en MATLAB/Simulink.
 
----
 
 ## Implementación en MATLAB y Simulink
 
@@ -323,11 +315,7 @@ $$
 
 La comparación debe considerar las diferencias en amplitud, variaciones de presión y respuesta transitoria asociadas con los valores de distensibilidad.
 
-**Evidencia pendiente:** agregar la gráfica de los tres modelos en lazo abierto, identificando ejes, unidades y leyenda.
 
-<!-- ![Comparación en lazo abierto](resultados/lazo_abierto.png) -->
-
----
 
 ## Diseño y sintonización PID
 
@@ -392,9 +380,7 @@ $$
 
 Analizar la reducción del error, la estabilidad, el seguimiento de referencia y las diferencias del transitorio. Los resultados de los dos controladores deben presentarse por separado.
 
-**Evidencias pendientes:** `resultados/hipotenso_pid.png` y `resultados/hipertenso_pid.png`.
 
----
 
 ## Implementación en Python
 
@@ -457,7 +443,6 @@ Elaborar en **BioRender** o una herramienta equivalente un diagrama cardiovascul
 
 Se puede utilizar un mismo diagrama anatómico para explicar los tres casos, identificando los cambios de $C$ que corresponden a cada uno.
 
-**Evidencia pendiente:** `imagenes/diagrama_biologico.png`.
 
 ---
 
